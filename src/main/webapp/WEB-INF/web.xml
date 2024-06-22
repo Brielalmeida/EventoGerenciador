@@ -10,19 +10,37 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   <servlet>
-        <servlet-name>cadastrarEvento</servlet-name>
-        <servlet-class>controller.CadastrarEventoServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>listarEvento</servlet-name>
-        <servlet-class>controller.ListarEventoServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>cadastrarEvento</servlet-name>
-        <url-pattern>/cadastrarEvento</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>listarEvento</servlet-name>
-        <url-pattern>/listarEvento</url-pattern>
-    </servlet-mapping>
+    <servlet-name>cadastrarEvento</servlet-name>
+    <servlet-class>controller.CadastrarEventoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>listarEvento</servlet-name>
+    <servlet-class>controller.ListarEventoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cadastrarEvento</servlet-name>
+    <url-pattern>/cadastrarEvento</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>listarEvento</servlet-name>
+    <url-pattern>/listarEvento</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>listarUsuario</display-name>
+    <servlet-name>listarUsuario</servlet-name>
+    <servlet-class>controller.listarUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>listarUsuario</servlet-name>
+    <url-pattern>/listarUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>controller.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+</servlet-mapping>
 </web-app>

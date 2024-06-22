@@ -12,9 +12,11 @@
 	<nav class="bananaNav">
 		<ul>
 			<li><span style="color: yellow">Gerenciador de eventos</span></li>
-			<li><a href="cadastrarEvento.jsp">Cadastrar Evento</a></li>
-			<li><a href="listarEvento.jsp">Consultar Evento</a></li>
-			<li><a href="cadastrarUsuario.jsp">Cadastrar Usuário</a></li>
+            <li><a href="cadastrarEvento.jsp">Cadastrar Evento</a></li>
+            <li><a href="listarEvento.jsp">Consultar Evento</a></li>
+            <li><a href="cadastrarUsuario.jsp">Cadastrar Usuário</a></li>
+            <li><a href="listarUsuario.jsp">Consultar Usuário</a></li>
+            <li><a href="login.jsp">Login</a></li>
 		</ul>
 	</nav>
 	<main class="bananaMain">

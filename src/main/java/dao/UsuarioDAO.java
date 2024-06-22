@@ -80,4 +80,51 @@ public class UsuarioDAO {
     	 }
     	 return lista;
     }
+    
+    public static Usuario autenticar(Usuario user) throws SQLException {
+        String sql = "SELECT * FROM usuario WHERE login = ? AND senha = ?";
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        Usuario usuarioAutenticado = null;
+        
+        try {
+            conn = MySqlConnection.createConnection();
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, user.getLogin());
+            pstm.setString(2, user.getSenha());
+            
+            rs = pstm.executeQuery();
+            
+            if (rs.next()) {
+                usuarioAutenticado = new Usuario();
+                usuarioAutenticado.setNome(rs.getString("nome"));
+                usuarioAutenticado.setLogin(rs.getString("login"));
+                // não se recomenda armazenar senha na sessão, apenas ilustração
+                usuarioAutenticado.setSenha(rs.getString("senha"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        	try{
+   			 if(rs != null){
+   				 rs.close();
+   			 }
+   	 
+   			 if(pstm != null){
+   				 pstm.close();
+   			 }
+   			 
+   			 if(conn != null){
+   				 conn.close();
+   			 }
+   	 
+   		 }catch(Exception e){
+   			 e.printStackTrace();
+   		 }
+        }
+        
+        return usuarioAutenticado;
+    }
 }

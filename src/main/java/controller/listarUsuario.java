@@ -9,20 +9,20 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import model.Evento;
-import dao.EventoDAO;
+import model.Usuario;
+import dao.UsuarioDAO;
 
-@WebServlet("/listarEventos")
-public class listarEvento extends HttpServlet {
+@WebServlet("/listarUsuarios")
+public class listarUsuario extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-            List<Evento> eventos = EventoDAO.listarBD(); // Método para obter todos os eventos do banco de dados
-            request.setAttribute("eventos", eventos); // Define os eventos como atributo da requisição
+            List<Usuario> usuarios = UsuarioDAO.listarBD(); // Método para obter todos os eventos do banco de dados
+            request.setAttribute("usuarios", usuarios); // Define os eventos como atributo da requisição
         
 
         // Encaminha a requisição para a página JSP que exibirá os eventos
-        request.getRequestDispatcher("listarEvento.jsp").forward(request, response);
+        request.getRequestDispatcher("listarUsuario.jsp").forward(request, response);
     }
 }
